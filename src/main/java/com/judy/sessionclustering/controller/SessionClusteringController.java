@@ -16,7 +16,8 @@ public class SessionClusteringController {
 
     @GetMapping("/test")
     public ApiResponse test(HttpSession session, @RequestParam String id) {
-        log.info("id={}", session.getId());
+        log.info("session.getId()={}", session.getId());
+        log.info("id={}", id);
         session.setAttribute(KEY, id);
         return new ApiResponse();
     }
